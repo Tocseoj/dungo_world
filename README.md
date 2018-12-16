@@ -1,2 +1,2 @@
 # dungo_world
-Roguelike Sim written in Python
+Roguelike Sim made in Godot
