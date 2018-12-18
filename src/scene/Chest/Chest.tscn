@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://scene/chest/chest.gd" type="Script" id=1]
+[ext_resource path="res://art/environment/tiles_dungeon_v1.1.png" type="Texture" id=2]
+
+[sub_resource type="GDScript" id=2]
+
+script/source = "extends StaticBody2D
+
+func interact():
+	get_parent().interact()"
+
+[sub_resource type="RectangleShape2D" id=1]
+
+extents = Vector2( 8, 8 )
+
+[node name="Chest" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 224, 256, 16, 16 )
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+script = SubResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource( 1 )
+

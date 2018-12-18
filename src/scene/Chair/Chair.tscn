@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scene/Chair/chair.gd" type="Script" id=1]
+[ext_resource path="res://art/environment/tiles_dungeon_v1.1.png" type="Texture" id=2]
+
+
+[node name="Chair" type="Node2D"]
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 0, -8 )
+texture = ExtResource( 2 )
+region_enabled = true
+region_rect = Rect2( 208, 256, 16, 32 )
+
